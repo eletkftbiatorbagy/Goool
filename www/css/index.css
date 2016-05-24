@@ -1,63 +1,23 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 * {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
+    
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
+    text-transform:smallcaps;
     width:100%;
+    background : url('../img/menu_hatter.png');
+    background-size: auto 100vh;
 }
 
-/* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
-}
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
@@ -69,47 +29,145 @@ body {
     }
 }
 
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+#goool {
+	position:absolute;
+	left:0%;
+	top:0%;
+	width:60%;
+	z-index:2;
+}
+#logo {
+	position:absolute;
+	right:3%;
+	top:3%;
+	width:30%;
+}
+#focista {
+	position:absolute;
+	bottom:0%;
+	right:3%;
+	width:70%;
+}
+#labda {
+	position:absolute;
+	left:31%;
+	bottom:36%;
+	width:10%;
+	z-index:99;
 }
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
+#paypal {
+	position:absolute;
+	left:4%;
+	bottom:4%;
+	width:30%;
 }
 
-.event.listening {
-    background-color:#333333;
-    display:block;
+
+#live {
+	position:absolute;
+	left:15%;
+}
+#replay {
+	position:absolute;
+	left:55%;
+}
+#live, #replay {
+	width:30%;
+	top:22%;
+	border-radius : 2vw;
+	border: 0.5vw solid #f3d3c5;
 }
 
-.event.received {
-    background-color:#4B946A;
-    display:none;
+.back {
+	position:absolute;
+	top:1%;
+	left:1%;
+	height:10vh;
+}
+h1{
+	position:absolute;
+	right:2vw;
+	top:2vh;
+	font: 11vh Verdana;
+	color:#ABCA25;
+	text-shadow: 3px 3px #F6E500;
+	text-align:right;
+	background: #ffffff;
+	opacity: 0.85;
+	border-radius: 3vh;
+	padding:2vh;
+}
+
+p {
+	position:absolute;
+	left:10%;
+	right:10%;
+	top: 25%;
+	bottom:50%%;
+	font: 6vh Verdana;
+	color:#ABCA25;
+	text-shadow: 2px 2px #F6E500;
+}
+
+video {
+	position: absolute;
+	top:25%;
+	left:10%;
+	width:80%;
+}
+
+span {
+	position:absolute;
+	left:10%;
+	right:10%;
+	bottom: 10%;
+	font: 6vh Verdana;
+	color:#ffCA25;
+	text-shadow: 2px 2px #F6E500;
+	text-align:center;
+}
+
+.paypal {
+	position:absolute;
+	left:25%;
+	bottom:4%;
+	width:50%;
 }
 
 @keyframes fade {
     from { opacity: 1.0; }
-    50% { opacity: 0.4; }
+    50% { opacity: 0.7; }
     to { opacity: 1.0; }
 }
- 
+@keyframes fade2 {
+    from { opacity: 0.7; }
+    50% { opacity: 1.0; }
+    to { opacity: 0.7; }
+} 
 @-webkit-keyframes fade {
     from { opacity: 1.0; }
-    50% { opacity: 0.4; }
+    50% { opacity: 0.7; }
     to { opacity: 1.0; }
 }
  
 .blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+    animation:fade 4000ms infinite;
+    -webkit-animation:fade 4000ms infinite;
+    animation-timing-function: ease-in-out;
+}
+.blink2{
+	animation:fade2 4000ms infinite;
+    -webkit-animation:fade2 4000ms infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.goool{
+	animation:goool 1000ms;
+	animation-timing-function: ease-in;
+	animation-iteration-count:1;
+}
+@keyframes goool {
+	from { left:31%; bottom:36%; width:10%; }
+	to { left:-10%; bottom: -30%; width:120%; }
 }

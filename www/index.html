@@ -1,42 +1,65 @@
 <!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <title>Goool</title>
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+        <div id="FoMenu">
+        	<img id="goool" 	src="img/menu_goool.png">
+        	<img id="logo"  	src="img/menu_logo.png">
+        	<img id="focista" 	src="img/menu_focista.png">
+        	<img id="labda" 	src="img/labda.png" ontouchstart = "this.classList.add('goool');setTimeout(function(){var elm = document.getElementById('labda'); elm.classList.remove('goool'); var newone = elm.cloneNode(true); elm.parentNode.replaceChild(newone, elm);},1000);">
+        	
+        	<img id="live" 		src="img/live.png" ontouchstart="document.getElementById('FoMenu').style.display='none';document.getElementById('Stream'+(PayPal?'':'PP')).style.display='block';">
+        	<img id="replay" 	src="img/replay.png" ontouchstart="document.getElementById('FoMenu').style.display='none';document.getElementById('Replay'+(PayPal?'':'PP')).style.display='block';">
+        	
+        	<img id="paypal"    src="img/paypal.png" ontouchstart="PayPal=true;">
         </div>
+        
+        <div id="Replay" style="display:none;">
+        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('Replay').style.display='none';document.getElementById('FoMenu').style.display='block';">
+        	<h1>Visszajátszások</h1>
+        </div>
+        
+        <div id="ReplayPP" style="display:none;">
+        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('ReplayPP').style.display='none';document.getElementById('FoMenu').style.display='block';">
+        	<h1>Visszajátszások</h1>
+        	<p>
+        		A tartalom megtekintéséhez előfizetésre van szükség.<br>
+        		Előfizetni bankkártyával a PayPal szolgáltatáson keresztül tud.
+        	</p>
+        	<img class="paypal" src="img/paypal.png">
+        </div>
+        
+        <div id="Stream" style="display:none;">
+        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('Stream').style.display='none';document.getElementById('FoMenu').style.display='block';">
+        	<h1>Élő adás</h1>
+        	<video controls  autoplay="autoplay">
+			  	<source src="http://52.48.205.254:1935/dream4sys/stream1/playlist.m3u8" type="video/mp4">
+			  	A készüléke nem támogatja a videólejátszást.
+			</video>
+			<span>
+				Puskás FC  -  Pannónia Allstars
+			</span>
+        </div>
+        		
+        <div id="StreamPP" style="display:none;">
+        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('StreamPP').style.display='none';document.getElementById('FoMenu').style.display='block';">
+        	<h1>Élő adás</h1>
+        	<p>
+        		A tartalom megtekintéséhez előfizetésre van szükség.<br>
+        		Előfizetni bankkártyával a PayPal szolgáltatáson keresztül tud.
+        	</p>
+        	<img class="paypal" src="img/paypal.png">
+        </div>
+        
+        
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
