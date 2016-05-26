@@ -34,7 +34,7 @@ function gol(ablak)
 					if (UjAblak==="Replay") { myScroll = new IScroll("#lista"); }
 					if (UjAblak==="Stream") {
 						var video = document.getElementById("stream1");
-						video.innerHTML = '<source src="http://'+SERVER+':1935/dream4sys/stream1/playlist.m3u8" autoplay>';
+						video.innerHTML = '<source src="http://'+SERVER+':1935/dream4sys/stream1/playlist.m3u8" autoplay="true">';
 					}
 		},1000);
 }
@@ -44,7 +44,7 @@ function vod(obj)
 {
 	var film = obj.getAttribute("film");
 	var video = document.getElementById("stream0");
-	video.innerHTML = '<source src="rtmp://'+SERVER+'/vod/'+film+'" autoplay>';
+	video.innerHTML = '<source src="http://'+SERVER+'/vod/'+film+'" autoplay="true">';
 	document.getElementById("VOD").style.display="block";
 	document.getElementById("Replay").style.display="none";	
 }
