@@ -44,7 +44,7 @@ function vod(obj)
 {
 	var film = obj.getAttribute("film");
 	var video = document.getElementById("stream0");
-	video.innerHTML = '<source src="rtmp://'+SERVER+'/vod/mp4:'+film+'" autoplay>';
+	video.innerHTML = '<source src="rtmp://'+SERVER+'/vod/'+film+'" autoplay>';
 	document.getElementById("VOD").style.display="block";
 	document.getElementById("Replay").style.display="none";	
 }
