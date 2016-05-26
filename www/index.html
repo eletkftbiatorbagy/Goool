@@ -8,16 +8,19 @@
         <link rel="stylesheet" type="text/css" href="css/reset.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Goool</title>
+        
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/iscroll-lite.js"></script>
     </head>
-    <body>
+    <body onload="myScroll = new IScroll('#lista');console.log('scroll init');">
         <div id="FoMenu">
         	<img id="goool" 	src="img/menu_goool.png">
         	<img id="logo"  	src="img/menu_logo.png">
         	<img id="focista" 	src="img/menu_focista.png">
         	<img id="labda" 	src="img/labda.png" ontouchstart = "this.classList.add('goool');setTimeout(function(){var elm = document.getElementById('labda'); elm.classList.remove('goool'); var newone = elm.cloneNode(true); elm.parentNode.replaceChild(newone, elm);},1000);">
         	
-        	<img id="live" 		src="img/live.png" ontouchstart="document.getElementById('FoMenu').style.display='none';document.getElementById('Stream'+(PayPal?'':'PP')).style.display='block';">
-        	<img id="replay" 	src="img/replay.png" ontouchstart="document.getElementById('FoMenu').style.display='none';document.getElementById('Replay'+(PayPal?'':'PP')).style.display='block';">
+        	<img id="live" 		src="img/live.png" ontouchstart="gol('Stream');">
+        	<img id="replay" 	src="img/replay.png" ontouchstart="gol('Replay');">
         	
         	<img id="paypal"    src="img/paypal.png" ontouchstart="PayPal=true;">
         </div>
@@ -25,6 +28,57 @@
         <div id="Replay" style="display:none;">
         	<img class="back" src="img/back.png" ontouchstart="document.getElementById('Replay').style.display='none';document.getElementById('FoMenu').style.display='block';">
         	<h1>Visszajátszások</h1>
+			<hatter></hatter>
+			<scroll id="lista">
+				<ul>
+					<li class="film" ontouchstart="vod(this);" film="sample.mp4">
+						<img src="img/film.png">
+						<mecss>Puskás FC  -  Pannónia Allstars</mecss>
+						<cim>A vendégcsapat gólja</cim>
+						<info>24. perc</info>
+					</li>
+					<li class="film">
+						<img src="img/film.png">
+						<mecss>Puskás FC  -  Pannónia Allstars</mecss>
+						<cim>Kihagyott helyzet</cim>
+						<info>28. perc</info>
+					</li>
+					<li class="film">
+						<img src="img/film.png">
+						<mecss>Puskás FC  -  Pannónia Allstars</mecss>
+						<cim>Egyenlítő gól</cim>
+						<info>49. perc</info>
+					</li>
+					<li class="film">
+						<img src="img/film.png">
+						<mecss>Puskás FC  -  Pannónia Allstars</mecss>
+						<cim>Kiállítás</cim>
+						<info>53. perc</info>
+					</li>
+					<li class="film">
+						<img src="img/film.png">
+						<mecss>Puskás FC  -  Pannónia Allstars</mecss>
+						<cim>Hatalmas lövés, majdnem gól</cim>
+						<info>61. perc</info>
+					</li>
+					<li class="film">
+						<img src="img/film.png">
+						<mecss>Puskás FC  -  Pannónia Allstars</mecss>
+						<cim>2:1 a hazaiak javára</cim>
+						<info>74. perc</info>
+					</li>
+				</ul>
+			</scroll>	
+        </div>
+        
+        <div id="VOD" style="display:none;">
+        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('Replay').style.display='block';document.getElementById('VOD').style.display='none';">
+        	<h1 id="vod_cim"></h1>
+        	<video id="stream0" controls>
+			</video>
+			<span id="vod_mecss">
+				
+			</span>
         </div>
         
         <div id="ReplayPP" style="display:none;">
@@ -40,9 +94,7 @@
         <div id="Stream" style="display:none;">
         	<img class="back" src="img/back.png" ontouchstart="document.getElementById('Stream').style.display='none';document.getElementById('FoMenu').style.display='block';">
         	<h1>Élő adás</h1>
-        	<video controls>
-			  	<source src="http://52.48.205.254:1935/dream4sys/stream1/playlist.m3u8">
-			  	A készüléke nem támogatja a videólejátszást.
+        	<video id="stream1" controls>
 			</video>
 			<span>
 				Puskás FC  -  Pannónia Allstars
@@ -60,8 +112,9 @@
         </div>
         
         
+        
+        
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
